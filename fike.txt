@@ -1,1 +1,22 @@
 my name is kusu
+git commands
+cd
+init
+cat 
+vi
+rm
+cp
+mv
+help
+add
+commit status
+log
+reset
+restore
+branch
+checkout
+merge
+remote add
+git pull origin main
+git push origin main
+git clone repo
