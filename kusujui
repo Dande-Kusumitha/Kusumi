@@ -1,0 +1,11 @@
+FROM fedora
+RUN yum install java -y
+RUN mkdir /opt/tomcat
+WORKDIR /opt/tomcat
+ADD  <link of the tar file> .
+RUN tar -xvzf <tar file .tar.gz>
+RUN mv apache-tomcat-9.0.83/* /opt/tomcat
+EXPOSE 8080
+CMD ["/opt/tomcat/bin/catalin.sh","run"]
+
+docker build -t tomcat:v1 .
