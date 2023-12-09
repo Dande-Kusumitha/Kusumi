@@ -1,3 +1,7 @@
+
+
+
+
 FROM fedora
 RUN yum install java -y
 RUN mkdir /opt/tomcat
@@ -9,3 +13,65 @@ EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalin.sh","run"]
 
 docker build -t tomcat:v1 .
+
+useradd dockercseb
+vi /etc/ssh/sshd_config
+password authetication yes
+passwd dockercseb
+ jenkings page plugins install pblishover ssh plugins
+manage jenkins
+publish over ssh
+ssh
+click on add
+name host
+clic on advanced
+use password authentication
+password cseb
+apply and save
+new item 
+name dockercseb
+copy from maven project
+ok
+poll scm schedule
+* * * * *
+post build actions
+send build artifacts over SSH
+name dockerhost
+sources cseb/target/*.war
+remove prefix cseb/target
+//opt//target
+apply 
+save
+build now
+in mobaxterm
+ in dockercseb
+sudo su -
+ll -a
+cd cseb
+ll -a
+build now
+cd ..
+ll -a
+exit
+root in mobaxterm
+cd /opt
+mkdir docker
+ll -a
+cd ..
+ll -a
+cd /opt/docker
+ll -a
+chown -R dockercseb:dockercseb /opt/docker
+ll -a
+vi dockerfile
+FROM tomcat
+RUN cp /usr/local/tomcat/webapps.dist/* /usr/local/tomcat webapps
+save exit
+goto jenkins
+configure
+remote directory //opt//docker
+build nowafter save
+ll -a
+vi Do
+
+
